@@ -1,11 +1,11 @@
-import Navbar from "./components/Navbar.jsx";
-import FeaturedProduct from "./components/FeaturedProduct.jsx";
+import FeaturesProduct from "./FeaturesProduct.jsx";
+import Header from "./Header.jsx";
 
 export default function App() {
   return (
     <>
-      <Navbar />
-      <FeaturedProduct />
+      <Header />
+      <FeaturesProduct />
     </>
   );
 }
