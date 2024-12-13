@@ -58,7 +58,7 @@ const FeaturesProduct = () => {
             </li>
           </ul>
 
-          <ul className="hidden lg:flex items-center justify-start gap-3 flex-wrap mt-5">
+          <ul className="hidden lg:flex items-center md:gap-6 gap-3  flex-wrap mt-5 justify-center">
             {products.map((items, index) => (
               <li
                 key={items.id}
@@ -67,7 +67,7 @@ const FeaturesProduct = () => {
                   index === value && "border-2 border-orange-400 opacity-80"
                 }border-2 rounded-2xl overflow-hidden cursor-pointer`}
               >
-                <img src={items.thumbnail} alt="img thumnails" className="w-20" />
+                <img src={items.thumbnail} alt="img thumnails" className="w-full  lg:w-24 xl:w-28" />
               </li>
             ))}
           </ul>
