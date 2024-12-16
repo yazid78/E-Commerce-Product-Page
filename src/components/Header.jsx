@@ -62,7 +62,12 @@ const Header = () => {
                 {deletePanier ? (
                   <EmptyCart />
                 ) : AddCart ? (
-                  <Cart countPanier={countPanier} setdeletePanier={setdeletePanier} setAddCart={setAddCart} />
+                  <Cart
+                    setcountPanier={setcountPanier}
+                    countPanier={countPanier}
+                    setdeletePanier={setdeletePanier}
+                    setAddCart={setAddCart}
+                  />
                 ) : (
                   <EmptyCart />
                 )}

@@ -52,7 +52,7 @@ const FeaturesProduct = ({ setAddCart, setcountPanier, deletePanier, setdeletePa
             <li>
               <button
                 onClick={previousSlide}
-                className="bg-white rounded-full p-5 shadow absolute left-4 top-1/2 -translate-y-1/2"
+                className="bg-white rounded-full p-5 shadow absolute left-4 top-1/3 sm:top-1/2"
               >
                 <img src="./images/icon-previous.svg" alt="arrow previous" />
               </button>
@@ -60,7 +60,7 @@ const FeaturesProduct = ({ setAddCart, setcountPanier, deletePanier, setdeletePa
             <li>
               <button
                 onClick={nextSlide}
-                className="bg-white rounded-full p-5 shadow absolute right-4 top-1/2 -translate-y-1/2"
+                className="bg-white rounded-full p-5 shadow absolute right-4 top-1/3 sm:top-1/2"
               >
                 <img src="./images/icon-next.svg" alt="arrow next" />
               </button>
@@ -103,7 +103,7 @@ const FeaturesProduct = ({ setAddCart, setcountPanier, deletePanier, setdeletePa
             </p>
           </div>
           <div className="mt-10 lg:flex items-center justify-between gap-2">
-            <ul className="flex items-center justify-between bg-slate-100 py-2 px-4 rounded shadow lg:flex-1">
+            <ul className="flex mb-4 items-center justify-between bg-slate-100 py-2 px-4 rounded shadow lg:flex-1">
               <li className="cursor-pointer">
                 <img
                   src="./images/icon-minus.svg"
@@ -128,10 +128,10 @@ const FeaturesProduct = ({ setAddCart, setcountPanier, deletePanier, setdeletePa
                 />
               </li>
             </ul>
-            <div className="text-center lg:flex-1">
+            <div className="text-center mb-4 lg:flex-1">
               <button
                 className="flex items-center gap-4 bg-orange-500 py-2 px-4 justify-center lg:mt-0text-white
-               rounded-lg shadow font-bold mt-5 w-full hover:bg-orange-600 transition-all duration-200"
+               rounded-lg shadow font-bold  w-full hover:bg-orange-600 transition-all duration-200"
                 onClick={() => {
                   amount > 0 ? setAddCart(true) : setAddCart(false);
                   setdeletePanier(false);

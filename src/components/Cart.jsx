@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-const Cart = ({ countPanier, setdeletePanier, setAddCart }) => {
+const Cart = ({ countPanier, setcountPanier, setdeletePanier, setAddCart }) => {
   if (countPanier < 0) {
     countPanier = 0;
   }
@@ -21,13 +21,15 @@ const Cart = ({ countPanier, setdeletePanier, setAddCart }) => {
           </li>
 
           <li className="text-slate-600 text-sm">
-            $120.00 x {countPanier} <span className="font-bold text-slate-900">$375.00</span>
+            $125.00 x {countPanier}
+            <span className="font-bold text-slate-900"> $375.00</span>
           </li>
         </ul>
         <button
           onClick={() => {
             setdeletePanier(true);
             setAddCart(false);
+            setcountPanier(0);
           }}
         >
           <img src="./images/icon-delete.svg" alt="icon delete" />
