@@ -3,7 +3,18 @@ import { data } from "../data.js";
 import Lightbox from "./Lightbox.jsx";
 
 // eslint-disable-next-line react/prop-types
-const FeaturesProduct = ({ setAddCart, setcountPanier, deletePanier, setdeletePanier }) => {
+const FeaturesProduct = ({
+  // eslint-disable-next-line react/prop-types
+  setAddCart,
+  // eslint-disable-next-line react/prop-types
+  setcountPanier,
+  // eslint-disable-next-line react/prop-types
+  deletePanier,
+  // eslint-disable-next-line react/prop-types
+  setdeletePanier,
+  // eslint-disable-next-line react/prop-types
+  setnotifPanier,
+}) => {
   const [products] = useState(data);
   const [value, setValue] = useState(0);
   const [amount, setAmount] = useState(0);
@@ -110,7 +121,6 @@ const FeaturesProduct = ({ setAddCart, setcountPanier, deletePanier, setdeletePa
                   alt="-"
                   onClick={() => {
                     setAmount((prev) => prev - 1);
-                    setcountPanier((prev) => prev - 1);
                   }}
                 />
               </li>
@@ -123,7 +133,6 @@ const FeaturesProduct = ({ setAddCart, setcountPanier, deletePanier, setdeletePa
                   alt="+"
                   onClick={() => {
                     setAmount((prev) => prev + 1);
-                    setcountPanier((prev) => prev + 1);
                   }}
                 />
               </li>
@@ -133,7 +142,13 @@ const FeaturesProduct = ({ setAddCart, setcountPanier, deletePanier, setdeletePa
                 className="flex items-center gap-4 bg-orange-500 py-2 px-4 justify-center lg:mt-0text-white
                rounded-lg shadow font-bold  w-full hover:bg-orange-600 transition-all duration-200"
                 onClick={() => {
-                  amount > 0 ? setAddCart(true) : setAddCart(false);
+                  if (amount > 0) {
+                    setAddCart(true);
+                    setcountPanier(amount);
+                    setnotifPanier(true);
+                  } else {
+                    setAddCart(false);
+                  }
                   setdeletePanier(false);
                 }}
               >

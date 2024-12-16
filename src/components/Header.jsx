@@ -9,6 +9,7 @@ const Header = () => {
   const [AddCart, setAddCart] = useState(false);
   const [countPanier, setcountPanier] = useState(0);
   const [deletePanier, setdeletePanier] = useState(false);
+  const [notifPanier, setnotifPanier] = useState(false);
 
   return (
     <>
@@ -53,6 +54,12 @@ const Header = () => {
           <ul className="flex items-center gap-4">
             <li onClick={() => setShowCart(!showCart)}>
               <button>
+                {AddCart && notifPanier && countPanier > 0 && (
+                  <span className="absolute right-26 top-7 rounded-full py-0.5 px-1.5 text-xs text-white bg-orange-500">
+                    {countPanier}
+                  </span>
+                )}
+
                 <img src="./images/icon-cart.svg" alt="icon-cart" className="w-8 text-2xl text-slate-600" />
               </button>
             </li>
@@ -81,6 +88,8 @@ const Header = () => {
         </div>
       </header>
       <FeaturesProduct
+        notifPanier={notifPanier}
+        setnotifPanier={setnotifPanier}
         setAddCart={setAddCart}
         setcountPanier={setcountPanier}
         deletePanier={deletePanier}
