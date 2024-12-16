@@ -25,7 +25,7 @@ const Header = () => {
               </li>
             )}
             <li>
-              <img src="./images/logo.svg" alt="logo" />
+              <img src="/images/logo.svg" alt="logo" />
             </li>
           </ul>
           {menuIsopen && (
