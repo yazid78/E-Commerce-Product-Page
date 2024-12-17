@@ -31,22 +31,22 @@ const Header = () => {
           {menuIsopen && (
             <nav className="fixed transition-all duration-3000 ease-in-out top-0 left-0 w-56 h-screen z-40 bg-white mt-10 ">
               <ul className="p-5">
-                <li className="mb-2 cursor-pointer">Collections</li>
-                <li className="mb-2 cursor-pointer">Men</li>
-                <li className="mb-2 cursor-pointer">Women</li>
-                <li className="mb-2 cursor-pointer">About</li>
-                <li className="mb-2 cursor-pointer">Contact</li>
+                <li className="mb-2 font-bold cursor-pointer">Collections</li>
+                <li className="mb-2 font-bold cursor-pointer">Men</li>
+                <li className="mb-2 font-bold cursor-pointer">Women</li>
+                <li className="mb-2 font-bold cursor-pointer">About</li>
+                <li className="mb-2 font-bold cursor-pointer">Contact</li>
               </ul>
             </nav>
           )}
 
           <nav className="hidden lg:flex">
             <ul className="flex items-center justify-start gap-4">
-              <li>Collections</li>
-              <li>Men</li>
-              <li>Women</li>
-              <li>About</li>
-              <li>Contact</li>
+              <li className="text-slate-500 cursor-pointer hover:border-b-4 border-orange-500">Collections</li>
+              <li className="text-slate-500 cursor-pointer hover:border-b-4 border-orange-500">Men</li>
+              <li className="text-slate-500 cursor-pointer hover:border-b-4 border-orange-500">Women</li>
+              <li className="text-slate-500 cursor-pointer hover:border-b-4 border-orange-500">About</li>
+              <li className="text-slate-500 cursor-pointer hover:border-b-4 border-orange-500">Contact</li>
             </ul>
           </nav>
         </div>
