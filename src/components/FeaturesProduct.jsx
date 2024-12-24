@@ -14,18 +14,24 @@ const FeaturesProduct = ({
   setdeletePanier,
   // eslint-disable-next-line react/prop-types
   setnotifPanier,
+  // eslint-disable-next-line react/prop-types
+  addCart,
 }) => {
   const [products] = useState(data);
   const [value, setValue] = useState(0);
   const [amount, setAmount] = useState(0);
   const [slideIndex, setSliderIndex] = useState(0);
   const [showLightbox, setShowLightbox] = useState(false);
+  console.log(addCart);
   useEffect(() => {
     if (deletePanier) {
       setAmount(0);
     }
   }, [deletePanier]);
 
+  if (amount === 0) {
+    setdeletePanier(true);
+  }
   const nextSlide = () => {
     const newIndex = ((slideIndex + 1) % products.length) % products.length;
     setSliderIndex(newIndex);
@@ -146,10 +152,10 @@ const FeaturesProduct = ({
                     setAddCart(true);
                     setcountPanier(amount);
                     setnotifPanier(true);
+                    setdeletePanier(false);
                   } else {
                     setAddCart(false);
                   }
-                  setdeletePanier(false);
                 }}
               >
                 <img src="./images/icon-cart.svg" alt="icon-cart" className="w-8" />

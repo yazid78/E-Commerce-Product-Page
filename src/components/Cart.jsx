@@ -1,8 +1,11 @@
+import { useNavigate } from "react-router-dom";
+
 // eslint-disable-next-line react/prop-types
 const Cart = ({ countPanier, setcountPanier, setdeletePanier, setAddCart }) => {
   if (countPanier < 0) {
     countPanier = 0;
   }
+  let navigate = useNavigate();
   const text = "Autumn Limited Edition Sneakers";
   return (
     <article
@@ -22,7 +25,7 @@ const Cart = ({ countPanier, setcountPanier, setdeletePanier, setAddCart }) => {
 
           <li className="text-slate-600 text-sm">
             $125.00 x {countPanier}
-            <span className="font-bold text-slate-900">$ 375.00</span>
+            <span className="font-bold text-slate-900"> ${125.0 * countPanier + ".00"}</span>
           </li>
         </ul>
         <button
@@ -38,6 +41,7 @@ const Cart = ({ countPanier, setcountPanier, setdeletePanier, setAddCart }) => {
       <button
         className="bg-orange-500 px-4 text-white
       font-bold rounded-lg shadow mt-5 w-full lg:mt-0 hover:bg-orange-600 transition-all duration-200"
+        onClick={() => navigate("/checkout")}
       >
         Checkout
       </button>
