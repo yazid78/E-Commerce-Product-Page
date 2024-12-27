@@ -1,10 +1,10 @@
 import express from "express";
 import Stripe from "stripe";
 import cors from "cors";
-
-const stripe = new Stripe(
-  "sk_test_51QYvNd4dfSNZJgNhU9MNg7Qd33JzHt5RtwhG1hqU6NmmXylh9MVWPrY3YF55g1uvXPpm7Xwm8ds6AaATRFv1tGO600eFCQHTSp"
-);
+import "dotenv/config";
+// eslint-disable-next-line no-undef
+const key = process.env.KEY_STRIPE;
+const stripe = new Stripe(key);
 const app = express();
 const YOUR_DOMAIN = "http://localhost:5173";
 
